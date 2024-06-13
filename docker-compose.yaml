@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   react-app:
-    #image: mugeshtechversant/testreactapp:react-latest-1
+    image: mugeshtechversant/testreactapp:react-latest-1
     build:
       context: ./my-react-app
     container_name: react_app
@@ -14,7 +14,7 @@ services:
       - app-network
 
   node-api:
-    #image: mugeshtechversant/node-app-mugesh:node-latest-1
+    image: mugeshtechversant/node-app-mugesh:node-latest-1
     build:
       context: ./expressApp
     container_name: node_api
