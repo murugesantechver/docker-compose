@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  react-app:
+    #image: mugeshtechversant/testreactapp:react-latest-1
+    build:
+      context: ./my-react-app
+    container_name: react_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - node-api
+    networks:
+      - app-network
+
+  node-api:
+    #image: mugeshtechversant/node-app-mugesh:node-latest-1
+    build:
+      context: ./expressApp
+    container_name: node_api
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge

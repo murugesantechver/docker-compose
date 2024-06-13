@@ -1,0 +1,11 @@
+# Ignore node_modules in my-react-app and my-node-api
+/my-react-app/node_modules/
+/expressApp/node_modules/
+
+# Ignore build artifacts (optional)
+my-react-app/build/
+my-node-api/build/
+
+# Ignore other OS generated files
+.DS_Store
+Thumbs.db
