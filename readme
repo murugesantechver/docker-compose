@@ -1,1 +1,3 @@
-
+Steps to run compose :
+   cd docker-compose
+   docker-compose up -d      
